@@ -1,10 +1,14 @@
+import {useState} from 'react'
 import {Title, Subtitle} from '../components'
 import {Modal, ModalContent, ModalAction, Button} from '../theme/daisyui'
 import * as D from '../data'
 
 export default function ModalTest() {
-  const open = true
-  const closeClicked = () => alert('closeClicked')
+  const [open, setOpen] = useState(true)
+  const closeClicked = () => {
+    alert('closeClicked')
+    setOpen(false)
+  }
   const acceptClicked = () => alert('acceptClicked')
   return (
     <section className="mt-4">
