@@ -20,6 +20,7 @@ export default function RemoteUserTest() {
       .catch(setError)
       .finally(toggleLoading)
   }, [dispatch, toggleLoading])
+
   const changeName = useCallback(() => {
     toggleLoading()
     D.fetchRandomUser()
@@ -27,9 +28,11 @@ export default function RemoteUserTest() {
       .catch(setError)
       .finally(toggleLoading)
   }, [dispatch, toggleLoading])
+
   const changeEmail = useCallback(() => {
     dispatch(R.changeEmail(D.randomEmail()))
   }, [dispatch])
+
   const changePicture = useCallback(
     () => dispatch(R.changePicture({large: D.randomAvatar()})),
     [dispatch]

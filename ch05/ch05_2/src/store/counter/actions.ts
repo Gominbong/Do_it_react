@@ -1,8 +1,9 @@
 import type * as T from './types'
 
-export const setCounter = (payload: T.State): T.SetCounterAction => ({
+export const setCount = (payload: T.State): T.SetCounterAction => ({
   type: '@counter/setCounter',
   payload
 })
-export const increaseCounter = () => setCounter(1)
-export const decreaseCounter = () => setCounter(-1)
+
+export const increaseCounter = () => setCount(1)
+export const decreaseCounter = () => setCount(-1)
